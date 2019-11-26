@@ -9,7 +9,12 @@ function CreatePhoto() {
       e.preventDefault()
       console.log({url, description})
       fetch('http://localhost:5001/add', {
-        method: 'POST',
+       
+        method: "POST",
+        headers : {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ url, description }),
       })   
     }  

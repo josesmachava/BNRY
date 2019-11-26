@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const photoSchema = new Schema({
   url: { type: String, required: false },
   description: { type: String, required: false },
-  date: { type: Date, required: false},
-}, {
+  
+}, {  
   timestamps: false,
 });
 

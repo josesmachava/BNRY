@@ -5,19 +5,17 @@ let router = express.Router();
 
 router.get('/',(req, res) => {
     Photo.find()
-    .then(photo => res.json(photo))
+    .then(photos => res.json({photos}))
     .catch(err => res.status(400).json('Error: ' + err));
 })
 
 router.post('/add', ((req, res) => {
   const url = req.body.url;
   const description = req.body.description;
-  const date = Date.parse(req.body.date);
-
+ 
   const newPhoto = new Photo({
     url,
     description,
-    date,
   });
 
   newPhoto.save()
@@ -42,8 +40,7 @@ router.post('/update/:id', ((req, res) => {
     .then(photo => {
       photo.url = req.body.url;
       photo.description = req.body.description;
-      photo.date = Date.parse(req.body.date);
-
+ 
       photo.save()
         .then(() => res.json('Photo updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
