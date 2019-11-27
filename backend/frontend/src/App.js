@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import CreatePhoto from './components/create-photo.component';
 import PhotoList from './components/photo-list.component';
-import Slider from './components/slider';
+import Slider from './components/slider/Slider';
 import PageNotFound from './components/error/404';
 
 
