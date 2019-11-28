@@ -5,9 +5,12 @@ import ReactTooltip from 'react-tooltip'
 
 const RightArrow = (props,) => {
  
-const [count, setCount] = useState(2);
-const onclick = () =>{
-  console.log("hello");
+let [count, setCount] = useState(2);
+   const onclick = () =>{
+  if(count === 6){
+     setCount(count = 1)
+  }  
+   console.log("hello");
    setCount(count + 1)
    props.goToNextSlide()
 } 
