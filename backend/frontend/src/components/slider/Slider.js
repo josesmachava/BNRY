@@ -5,7 +5,6 @@ import LeftArrow from './LeftArrow';
 import Slide from './Slide';
 import RightArrow from './RightArrow';
 import axios from 'axios';
-
 import "./Slider.css"
 
 
@@ -33,9 +32,6 @@ class Slider extends React.Component {
   goToPrevNumber = () => {
   
     return this.state.currentIndex;
-    console.log('====================================');
-    console.log(this.state.currentIndex);
-    console.log('====================================');
   }
   goToPrevSlide = () => {
     if(this.state.currentIndex === 0)
@@ -98,7 +94,7 @@ class Slider extends React.Component {
 
 
         <RightArrow
-         goToNextSlide={this.goToNextSlide}
+         goToNextSlide={this.goToNextSlide} message={this.state.currentIndex}
         />
       </div>
     );

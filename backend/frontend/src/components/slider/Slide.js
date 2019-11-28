@@ -1,6 +1,5 @@
 
 import React, { Fragment } from 'react'
-
 const Slide = ({ image, legend}) => {
   const styles = {
     backgroundImage: `url(${image})`,
@@ -19,7 +18,7 @@ const Slide = ({ image, legend}) => {
     height: 'auto',
     padding: '20px',
   }
-  return <div className="slide" style={styles}> <span style={legendStyles}>{legend}</span></div> 
+  return <div className="slide" style={styles}> <span style={legendStyles}>{legend} </span></div> 
 }
 
 export default Slide
