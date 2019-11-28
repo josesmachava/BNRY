@@ -1,6 +1,7 @@
 import React , { useState }  from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
+import Navegation from './navegation.component';
 
 const EditPhoto = (props) => {
 
@@ -21,6 +22,13 @@ const EditPhoto = (props) => {
       };
   
   return (
+
+    <div className="container-fluid">
+    <div className="row">
+    <div className="col-md-2">
+        <Navegation />
+    </div>
+    <div className="col-md-10">
     <form     onSubmit={updatePhoto}>
     <div class="form-group">
     {showLoading >
@@ -52,9 +60,13 @@ const EditPhoto = (props) => {
     />
  
   </div>
+  
  
     <button type="submit" className="btn btn-primary">Save</button>
   </form>
+  </div>
+  </div>
+  </div>
 
   );
 }
