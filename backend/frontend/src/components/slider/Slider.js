@@ -93,7 +93,7 @@ class Slider extends React.Component {
         />
 
               
-        <RightArrow 
+        <RightArrow data-tip data-for='next' 
 
          goToNextSlide={this.goToNextSlide }   
         />
