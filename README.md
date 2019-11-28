@@ -1,0 +1,2 @@
+# Photo Slider
+Install node
