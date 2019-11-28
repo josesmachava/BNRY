@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import CreatePhoto from './components/create-photo.component';
 import PhotoList from './components/photo-list.component';
+import EditPhoto from './components/edit-photo.component';
+
 import Slider from './components/slider/Slider';
 import PageNotFound from './components/error/404';
 
@@ -25,6 +27,7 @@ const App = () => {
     <Route path="/" component={ Slider } exact />
     <Route path='/create' component={CreatePhoto}   />
     <Route path='/list' component=  { PhotoList }  />
+    <Route path='/edit/:id' component=  { EditPhoto }  />
     <Route component=  { PageNotFound }  />
     </Switch>
     

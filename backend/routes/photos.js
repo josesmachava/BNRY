@@ -5,7 +5,7 @@ let router = express.Router();
 
 router.get('/',(req, res) => {
     Photo.find()
-    .then(photos => res.json({photos}))
+    .then(photos => res.json(photos))
     .catch(err => res.status(400).json('Error: ' + err));
 })
 
@@ -23,9 +23,9 @@ router.post('/add', ((req, res) => {
   .catch(err => res.status(400).json('Error: ' + err));
 }));
 
-router.get('/:id', ((req, res) => {
+router.get('get/:id', ((req, res) => {
   Photo.findById(req.params.id)
-    .then(photo => res.json(photo))
+    .then(photos => res.json({photos}))
     .catch(err => res.status(400).json('Error: ' + err));
 }));
 
@@ -35,7 +35,7 @@ router.delete('/:id', ((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 }));
 
-router.post('/update/:id', ((req, res) => {
+router.put('/update/:id', ((req, res) => {
   Photo.findById(req.params.id)
     .then(photo => {
       photo.url = req.body.url;

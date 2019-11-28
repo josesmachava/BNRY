@@ -2,23 +2,24 @@ import React , { useState }  from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const CreatePhoto = () => {
+const CreatePhoto = (props) => {
 
     const [url, setUrl] = useState('')
     const [description, setDescription] = useState('')
     
-    const handleSubmit = e => {
+    const savePhoto = e => {
       e.preventDefault()
       console.log({url, description})
       axios.post('http://localhost:5001/add', { url:url, description: description })
       .then(function(response){
-          console.log('salvo com sucesso')
+         props.history.push('/list')
+        console.log('salvo com sucesso')
       });  
     
     }  
   
   return (
-    <form     onSubmit={handleSubmit}>
+    <form     onSubmit={savePhoto}>
     <div class="form-group">
     <label htmlFor="url">Insert image URL</label> <br />
     <input
