@@ -60,7 +60,7 @@ const PhotoList = (props) => {
          <th scope="row">{photo._id}</th>
          <td>{photo.url}</td> 
          <td>{photo.description}</td>
-         <td  onClick={() => { deletePhoto(photo._id) }}>   delete</td>
+         <td  onClick={() => { deletePhoto(photo._id) }}>   <i class="fa fa-trash" aria-hidden="true"></i></td>
          <td  onClick={() => { EditPhoto(photo._id) }}> <i class="fa fa-pencil" aria-hidden="true"></i></td>
      
          </tr>
