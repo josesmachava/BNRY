@@ -89,12 +89,13 @@ class Slider extends React.Component {
             }
         </div>
         <LeftArrow 
-         goToPrevSlide={this.goToPrevSlide}  message={"1"}
+         goToPrevSlide={this.goToPrevSlide}  message="12" 
         />
 
+              
+        <RightArrow 
 
-        <RightArrow
-         goToNextSlide={this.goToNextSlide} message={this.state.currentIndex}
+         goToNextSlide={this.goToNextSlide }   
         />
       </div>
     );
