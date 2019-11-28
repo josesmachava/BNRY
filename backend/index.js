@@ -4,11 +4,17 @@ import photo from './routes/photos';
 import './models/connection.db'
 
 
+
 const app = express();
 const  port = process.env.PORT || 5001;
 
+
+app.use(express.static(path.join(__dirname, 'front/build')));
+
 app.use(cors());
 app.use(express.json());
+
+
 
 
 app.use('/', photo);

@@ -1,5 +1,7 @@
 import React , { useState }  from 'react';
 import axios from 'axios';
+import Navegation from './navegation.component';
+
 import 'bootstrap/dist/css/bootstrap.css';
 
 const CreatePhoto = (props) => {
@@ -19,6 +21,12 @@ const CreatePhoto = (props) => {
     }  
   
   return (
+    <div className="container-fluid">
+    <div className="row">
+    <div className="col-md-2">
+        <Navegation />
+    </div>
+    <div className="col-md-10">
     <form     onSubmit={savePhoto}>
     <div class="form-group">
     <label htmlFor="url">Insert image URL</label> <br />
@@ -50,6 +58,9 @@ const CreatePhoto = (props) => {
  
     <button type="submit" className="btn btn-primary">Save</button>
   </form>
+  </div>
+  </div>
+  </div>
 
   );
 }
